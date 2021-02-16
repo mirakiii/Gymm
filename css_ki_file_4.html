@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vizibility and z index,flexbbox</title>
+</head>
+<style>
+    .box{
+        width: 170px;
+        height: 170px;
+        border: 2px solid black;
+    }
+    #box-1{
+        /* z index works only with position other than static (i.e default) */
+        /* z index is basically to infer which element is over written ,jiski z index zyada wo uper ajaega (zyada value zyada upar) */
+        background-color: green;
+        position:relative;
+        top:43px;
+        z-index:36;
+        }
+    #box-2{
+            /* default value of visibility is visible
+            hidden: this hides the element space is occupied
+            hidden+display:none this hides along with space  */
+            /* visibility:hidden; */
+            /* display:none; */
+            background-color: red;
+            position:relative;
+            top:-5px;
+            z-index:35;
+        }
+    #box-3{background-color: blue;}
+    #box-4{background-color: yellow;}
+
+    .container{
+        height:544px;
+        width:100%;
+        border: 2px solid black;
+        display: flex;
+
+        /* few flex properties for flex container */
+
+        /* row is default */
+        /* flex-direction: row; */
+        /* flex-direction: column; */
+        /* flex-direction: row-reverse; */
+        /* flex-direction: column-reverse; */
+
+        /* flex-wrap: wrap; */
+        /* flex-wrap: wrap-reverse; */
+
+        /* short hand for above functions*/
+        /* flex-flow: row-reverse wrap; */
+
+        /* this justifies content in horizontal direction */
+        /* justify-content: center; */
+        /* justify-content: space-between; */
+        /* justify-content: space-evenly; */
+        /* justify-content: space-around; */
+
+        /* this justifies content in horizontal direction */
+        /* align-items: center; */
+        /* align-items: flex-end; */
+        /* align-items: flex-start; */
+        /* align-items:stretch */
+
+    }
+    .item{
+        background-color: tomato;
+        width:200px;
+        height:200px;
+        border: 2px solid green;
+        margin:10px;
+        padding: 3px;
+    }
+    #item-1{
+        /* flex properties for flex items */
+
+        /* higher the order later it shows in the container */
+        order:4;
+
+        /* chote size me chota bada hone ka mauka milega to us proportion se badhega */
+        /* flex-grow: 2; */
+        
+        /* instead of using neg sign in above one we can use flex shrink */
+        /* flex-shrink: 3; */
+
+        /* when flex direction is set to row/column flex-basis will control width/height */
+        /* flex-basis: 300px; */
+
+        /* short hand for all above functions */
+        /* flex:2 2 350px; */
+
+        /* align-self: center; */
+        /* align-self: flex-start; */
+        /* align-self: flex-end; */
+
+    }
+    #item-2{
+        order:2;
+        /* flex-grow: 3; */
+    }
+    #item-3{
+        order:1;
+    }
+</style>
+<body>
+    <div class="box" id="box-1"></div>
+    <div class="box" id="box-2"></div>
+    <div class="box" id="box-3"></div>
+    <div class="box" id="box-4"></div>
+
+    <hr>
+
+     <h1>this is flexbox !!</h1>
+     <div class="container">
+     <div class="item" id="item-1">first box</div>
+     <div class="item" id="item-2">second box</div>
+     <div class="item" id="item-3">third box</div>
+     <!-- <div class="item" id="item-4">fourth box</div>
+     <div class="item" id="item-5">fifth box</div>
+     <div class="item" id="item-6">sixth box</div> -->
+
+     <!-- comment these out in case to infer flex container properties -->
+     </div>
+    
+</body>
+</html>
